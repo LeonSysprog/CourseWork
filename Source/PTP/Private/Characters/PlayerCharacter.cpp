@@ -126,14 +126,15 @@ void APlayerCharacter::MoveRight(float Value)
 void APlayerCharacter::SetStealth()
 {
     StealthStatus = !StealthStatus;
-    StepVolume    = 0.f;
 
     if (StealthStatus)
     {
+        StepVolume    = 0.f;
         GetCharacterMovement()->MaxWalkSpeed = 300;
     }
     else
     {
+        StepVolume    = 1.f;
         GetCharacterMovement()->MaxWalkSpeed = 600;
     }
 }
